@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+::-webkit-scrollbar{
+    width: 0;
+}
+
+body {
+    overflow: overlay;
+}
+
+section {
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+.container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.landing{
+    color: white;
+    min-height: 100vh;
+    background: url("./backimage.jpg");
+    background-size: cover;
+    padding: 0rem 5rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 10vh;
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li{
+    padding-left: 10rem;
+    font-size: 1.2rem;
+}
+
+#logo{
+    font-weight: lighter;
+    font-size: 2rem;
+}
+
+.big-text{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    font-size: 5rem;
+}
+
+.intro{
+    background: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider{
+    background: rgb(120, 120, 120);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-text{
+    color: rgb(147, 147, 147);
+    font-size: 3rem;
+}
+
+.two{
+    background: rgb(211, 79, 79)
+}
+.three{
+    background: rgb(67, 91, 175)
+}
+.four{
+    background: lightsalmon
+}
+
+#welcome{
+    font-size: 70px;
+    opacity: .7;
+}

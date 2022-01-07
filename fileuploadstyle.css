@@ -1,0 +1,14 @@
+.background {
+    background-color: #202124;
+    color: #bcc0c3;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-elements {
+    display: flex;
+    flex-direction: column;
+}
