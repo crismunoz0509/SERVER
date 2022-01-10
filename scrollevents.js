@@ -1,3 +1,3 @@
-const sectionOne = document.querySelector(".landing");
+// const sectionOne = document.querySelector(".landing");
 
-const observer = new IntersectionObserver(callback, options);
+// const observer = new IntersectionObserver(callback, options);
