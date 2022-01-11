@@ -41,16 +41,13 @@ section {
     min-height: 100vh;
     background: url("./server_images/backimage.jpg");
     background-size: cover;
-    padding: 0rem 5rem;
+    padding: 0rem 6rem;
     position: relative;
 }
 
 .landing nav {
-    min-height: 10vh;
-    font-weight: 700;
     position: relative;
-    top: 2vh;
-    border-bottom: 1px solid pink;
+    top: 7vh;
 }
 
 .nav-toggle{
@@ -62,6 +59,12 @@ section {
 
 #nav-checkbox:checked ~ ul.nav-menu li{
     display: block;
+}
+#nav-checkbox:checked ~ label.nav-toggle .close{
+    display: block;
+}
+#nav-checkbox:checked ~ label.nav-toggle .menu{
+    display:none;
 }
 
 .nav-checkbox{
@@ -81,12 +84,11 @@ section {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    align-items: center;
-    margin: 1rem;
 }
 .nav-menu li{
     list-style: none;
     display: none;
+    padding: 0rem 6rem;
 }
 .nav-menu li:first-child{
     margin-right: auto;
@@ -181,4 +183,19 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%)
+}
+
+/* DESKTOP VIEW */
+@media only screen and (min-width:560px){
+    .nav-toggle{
+        display: none;
+    }
+
+    .nav-menu{
+        flex-direction: row;
+    }
+
+    .nav-menu li{
+        display: block;
+    }
 }
