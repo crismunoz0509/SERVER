@@ -29,19 +29,20 @@ section {
 .big-text{
     display: flex;
     justify-content: center;
-    font-size: 5rem;
+    align-items: center;
+    font-size: 4rem;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -40%);
+    text-align: center;
 }
 
 .landing{
-    color: white;
-    min-height: 100vh;
-    background: url("./server_images/backimage.jpg");
+    color: black;
+    min-height: 100vh; 
     background-size: cover;
-    padding: 0rem 6rem;
+    padding: 0rem 10%;
     position: relative;
 }
 
@@ -77,7 +78,7 @@ section {
 
 .menu{
     width: 1.5rem;
-    filter: white;
+    filter: black;
 }
 
 .nav-menu{
@@ -88,9 +89,10 @@ section {
 .nav-menu li{
     list-style: none;
     display: none;
-    padding: 0rem 6rem;
+    padding: 0rem 5%;
 }
 .nav-menu li:first-child{
+    padding: block;
     margin-right: auto;
     display: block;
 }
@@ -139,7 +141,7 @@ section {
 
 .intro-text{
     color: rgb(147, 147, 147);
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .hide{
@@ -155,7 +157,6 @@ section {
 /*---------------- SECOND PAGE ------------------------*/
 
 .led-showcase{
-    background: url("./server_images/pishowcase.gif");
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -164,12 +165,18 @@ section {
 
 /*---------------- THIRD PAGE ------------------------*/
 .three{
-    background: rgb(67, 91, 175)
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*---------------- FOURTH PAGE ------------------------*/
 .four{
-    background: lightsalmon
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*---------------- debug? ------------------------*/
@@ -186,7 +193,7 @@ section {
 }
 
 /* DESKTOP VIEW */
-@media only screen and (min-width:560px){
+@media only screen and (min-width:1100px){
     .nav-toggle{
         display: none;
     }
