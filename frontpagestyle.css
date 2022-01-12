@@ -165,6 +165,7 @@ section {
     max-height: 75vh;
     padding: 0rem 5%;
     padding-top: 5%;
+    overflow: hidden;
 }
 
 #coding-text{
