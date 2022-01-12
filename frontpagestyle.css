@@ -84,22 +84,20 @@ section {
 .nav-menu{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 15%;
 }
 .nav-menu li{
     list-style: none;
     display: none;
-    padding: 0rem 5%;
 }
 .nav-menu li:first-child{
-    padding: block;
     margin-right: auto;
     display: block;
 }
 .nav-menu a{
     text-decoration: none;
     color: inherit;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 .nav-links{
@@ -114,7 +112,6 @@ section {
 
 .logo{
     font-weight: lighter;
-    font-size: 2rem;
     cursor: pointer;
 }
 
@@ -141,8 +138,8 @@ section {
 }
 
 .intro-text{
-    color: rgb(147, 147, 147);
-    font-size: 2rem;
+    color: black;
+    font-size: 1rem;
 }
 
 .hide{
@@ -151,8 +148,30 @@ section {
 }
 
 .hide span{
-    transform: translateY(100%);
+    transform: translateY(200%);
     display: inline-block;
+    cursor: pointer;
+    padding: 0rem 0.5rem;
+    background-color: white;
+}
+.hide span:hover{
+    background-color: black;
+    color: white;
+}
+
+.code-outline{
+    background-color: black;
+    transform: translateY(12vh);
+    max-height: 75vh;
+    padding: 0rem 5%;
+    padding-top: 5%;
+}
+
+#coding-text{
+    font-family: monospace;
+    color: white;
+    min-height: 75vh;
+    font-size: 1.75rem;
 }
 
 /*---------------- SECOND PAGE ------------------------*/
@@ -205,5 +224,13 @@ section {
 
     .nav-menu li{
         display: block;
+        
     }
 }
+
+/*  MOBILE VIEW */
+@media only screen and (max-width: 600px) {
+    #coding-text {
+      font-size: 1.3rem
+    }
+  }
