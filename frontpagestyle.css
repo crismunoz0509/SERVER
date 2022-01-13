@@ -171,8 +171,9 @@ section {
 #coding-text{
     font-family: monospace;
     color: white;
-    min-height: 75vh;
+    min-height: 72vh;
     font-size: 1.75rem;
+    list-style: none;
 }
 
 /*---------------- SECOND PAGE ------------------------*/
