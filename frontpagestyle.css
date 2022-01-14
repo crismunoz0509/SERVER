@@ -167,6 +167,12 @@ section {
     padding-top: 5%;
     overflow: hidden;
 }
+.code-outline ul{
+    overflow: hidden;
+}
+.code-outline li{
+    overflow: hidden;
+}
 
 #coding-text{
     font-family: monospace;
@@ -174,6 +180,7 @@ section {
     min-height: 72vh;
     font-size: 1.75rem;
     list-style: none;
+    white-space: nowrap;
     overflow: hidden;
 }
 
