@@ -82,7 +82,7 @@ var colorInterp = gsap.utils.interpolate("#C00", "#00C");
 gsap.registerEffect({
     name:"hover_glitch",
     effect: (targets, config) =>{
-        return gsap.to(targets, {color: , ease:"none", duration: 0.7, yoyo: true, repeat: 1, text:{value:random_glitch_text[getRandomInt(4)], delimiter:""}})
+        return gsap.to(targets, {color: "red", ease:"none", duration: 0.7, yoyo: true, repeat: 1, text:{value:random_glitch_text[getRandomInt(4)], delimiter:""}})
     }
 });
 
