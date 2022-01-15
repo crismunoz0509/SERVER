@@ -1,5 +1,41 @@
-const linesOfCode = ["var Sansa = mislead(Stark,( x ) / -rule(rule(-0.26) - -mislead(protect(TABLE[( -bar(( mislead(Arya + Sansa * rule(betray(COLS),( Sansa )) * --30 / Arya * ( rule() ),ROWS) / protect(90 * -destroy(ROWS,dog - 1 + rule(--0.35,43 - -( 97 ) - 1 - mislead(( Sansa ),( ( destroy(protect(Ygritte + ( COLS ) * ROWS,( betray(dog", "COLS - -0.05,( destroy(COLS) )) ) ) ),rule(-0.18 - ( 28 ),ROWS,dog) + rule(COLS,210.991))][destroy(protect(-130.967 * -87) + ( -( ( TABLE[--Sansa][y] ) ) )) / Hodor]]] : What do we say to the Lord of Death? var Hodor = y var Jon = TABLE[TABLE[TABLE[Arya][ROWS]][Hodor]][( TABLE[0.5][( ( rule(ROWS) ) )] )] var Stark = ( -COLS ) def mislead(){ y += -bar(destroy(-0.39 - COLS - --Hodor))"];
-const random_glitch_text = "@#$%&";
+const linesOfCode = ["var Sansa = mislead(Stark,( x ) / -rule(rule(-0.26) - -mislead(protect(TABLE[( -bar(( mislead(Arya + Sansa * rule(betray(COLS),( Sansa )) * --30 / Arya * ( rule() ),ROWS) / protect(90 * -destroy(ROWS,dog - 1 + rule(--0.35,43 - -( 97 ) - 1 - mislead(( Sansa ),( ( destroy(protect(Ygritte + ( COLS ) * ROWS,( betray(dog", "COLS - -0.05,( destroy(COLS) )) ) ) ),rule(-0.18 - ( 28 ),ROWS,dog) + rule(COLS,210.991))][destroy(protect(-130.967 * -87) + ( -( ( TABLE[--Sansa][y] ) ) )) / Hodor]]] : What do we say to the Lord of Death? var Hodor = y var Jon = TABLE[TABLE[TABLE[Arya][ROWS]][Hodor]][( TABLE[0.5][( ( rule(ROWS) ) )] )] var Stark = ( -COLS ) def mislead(){ y += -bar(destroy(-0.39 - COLS - --Hodor))","( bar(Sansa) ); Arya *= -( 0.93 ); Ygritte /= protect assert Hodor : 'Nothing burns like the cold.' assert ROWS : 'One can not simply parse himself' assert -TABLE[-0.66][destroy(( --0.68 ),COLS) * TABLE[betray(Stark)]["];
+const random_glitch_text = "@#$%&*";
+const rainbowArray = [ 'rgb(255,0,0)',
+'rgb(255,0,42.5)',
+'rgb(255,0,85)',
+'rgb(255,0,127.5)',
+'rgb(255,0,170)',
+'rgb(255,0,212.5)',
+'rgb(255,0,255)',
+'rgb(212.5,0,255)',
+'rgb(170,0,255)',
+'rgb(127.5,0,255)',
+'rgb(85,0,255)',
+'rgb(42.5,0,255)',
+'rgb(0,0,255)',
+'rgb(0,42.5,255)',
+'rgb(0,85,255)',
+'rgb(0,127.5,255)',
+'rgb(0,170,255)',
+'rgb(0,212.5,255)',
+'rgb(0,255,255)',
+'rgb(0,255,212.5)',
+'rgb(0,255,170)',
+'rgb(0,255,127.5)',
+'rgb(0,255,85)',
+'rgb(0,255,42.5)',
+'rgb(0,255,0)',
+'rgb(42.5,255,0)',
+'rgb(85,255,0)',
+'rgb(127.5,255,0)',
+'rgb(170,255,0)',
+'rgb(212.5,255,0)',
+'rgb(255,255,0)',
+'rgb(255,212.5,0)',
+'rgb(255,170,0)',
+'rgb(255,127.5,0)',
+'rgb(255,85,0)',
+'rgb(255,42.5,0)' ];
 let startTL = gsap.timeline();
 
 function getRandomInt(max) {
@@ -19,18 +55,19 @@ function randomCodeLines(numOfLines){
         li.setAttribute('id','hackli');
 
 
-        linesOfCode.forEach(element => {
+        
             
-
-            for(let i = 0; i < element.length; i++){
-                var pixel_len = 22.6;
-                var width_of_ul = ul.clientWidth;
-                var number_of_spans = width_of_ul / pixel_len;
-                if(i < number_of_spans){
-                    li.innerHTML += "<span>" + element[i] +"</span>";
-                }
+        let element = linesOfCode[getRandomInt(3)];
+        console.log(element)
+        for(let i = 0; i < element.length; i++){
+            var pixel_len = 13;
+            var width_of_ul = ul.clientWidth;
+            var number_of_spans = width_of_ul / pixel_len;
+            if(i < number_of_spans){
+                li.innerHTML += "<span>" + element[i] +"</span>";
             }
-        });
+        }
+    
 
         ul.appendChild(li);
     }
@@ -59,12 +96,14 @@ function activateLanding(){
 
 
 function hackerText() {
-    let codeLinesTL = gsap.timeline();
-    randomCodeLines(15);
+    let ul_height = document.getElementById("coding-text");
+    let lines_height = ul_height.clientHeight / 45;
+    randomCodeLines(lines_height);
 
     hackLines = gsap.utils.toArray("#coding-text li");
     gsap.utils.shuffle(hackLines);
     spanArr = gsap.utils.toArray("#hackli span");
+    console.log(spanArr)
 
     //codeLinesTL.from(hackLines, {opacity: 0, duration: 5, ease: "none", stagger: {amount: 1}});
 
@@ -79,18 +118,38 @@ function hackerText() {
 
 //GSAP EFFECTS
 var colorInterp = gsap.utils.interpolate("#C00", "#00C");
+var nextColor = 0
 gsap.registerEffect({
     name:"hover_glitch",
     effect: (targets, config) =>{
-        return gsap.to(targets, {color: "red", ease:"none", duration: 0.7, yoyo: true, repeat: 1, text:{value:random_glitch_text[getRandomInt(4)], delimiter:""}})
+        return gsap.fromTo(targets, {color: "white"} ,{onStart: () => {
+            if(nextColor < rainbowArray.length){
+                nextColor++;
+            }else{
+                nextColor = 0;
+            }
+        },color: rainbowArray[nextColor], ease:"none", duration: 0.7, yoyo: true, repeat: 1, text:{value:random_glitch_text[getRandomInt(4)], delimiter:""}})
     }
 });
 
 gsap.registerEffect({
     name: "fade",
     effect: (targets, config) => {
-        return gsap.to(targets, {duration: config.duration, opacity: 0});
+        return gsap.fromTo(targets, {duration: config.duration, opacity: 0});
     },
     defaults: {duration: 2}, //defaults get applied to any "config" object passed to the effect
     extendTimeline: true, //now you can call the effect directly on any GSAP timeline to have the result immediately inserted in the position you define (default is sequenced at the end)
 });
+
+
+window.addEventListener("resize", function() {
+    if (screen.width >= 1100) {
+        let ul_height = document.getElementById("coding-text");
+        let lines_height = ul_height.clientHeight / 45;
+        randomCodeLines(lines_height);
+    } else {
+        let ul_height = document.getElementById("coding-text");
+        let lines_height = ul_height.clientHeight / 45;
+        randomCodeLines(lines_height);
+    }
+  })
