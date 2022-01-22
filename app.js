@@ -73,9 +73,10 @@ function randomCodeLines(numOfLines){
                 li.innerHTML += "<span>" + element[i] +"</span>";
             }
         }
-    
+
 
         ul.appendChild(li);
+
     }
     
 }
@@ -94,7 +95,7 @@ function activateLanding(){
         speed = 15;
     }
     startTL.to(".slider", {y: "100%", duration: screendrop});
-    startTL.to(".intro", {y: "100%", duration: screendrop, onComplete: hackerText()}, "-=2.5");
+    startTL.to(".intro", {y: "100%", duration: screendrop, onComplete: onResize()}, "-=2.5");
     startTL.fromTo(".nav", {opacity: .1, y:"-100"}, {y:"0", opacity: 1, duration: 1.5});
     startTL.to(".nav-menu li:first-child", {rotation:1080, duration: 1,})
 }
@@ -102,19 +103,6 @@ function activateLanding(){
 
 
 function hackerText() {
-    let ul_height = document.getElementById("coding-text");
-    let lines_height = ul_height.clientHeight / 45;
-
-    if (screen.width >= 1100) {
-        ul_height = document.getElementById("coding-text");
-        lines_height = ul_height.clientHeight / 45;
-        randomCodeLines(lines_height);
-    } else {
-        ul_height = document.getElementById("coding-text");
-        lines_height = ul_height.clientHeight / 30;
-        console.log(lines_height);
-        randomCodeLines(lines_height);
-    }
 
     hackLines = gsap.utils.toArray("#coding-text li");
     gsap.utils.shuffle(hackLines);
@@ -157,17 +145,23 @@ gsap.registerEffect({
 });
 
 
-window.addEventListener("resize", function() {
+function onResize(){
     if (screen.width >= 1100) {
         let ul_height = document.getElementById("coding-text");
+        ul_height.innerHTML = "";
         let lines_height = ul_height.clientHeight / 45;
         randomCodeLines(lines_height);
         hackerText();
     } else {
         let ul_height = document.getElementById("coding-text");
+        ul_height.innerHTML = "";
         let lines_height = ul_height.clientHeight / 25;
         console.log(lines_height);
         randomCodeLines(lines_height);
         hackerText();
     }
-  })
+}
+
+window.addEventListener("resize", function() {
+    onResize();
+})
