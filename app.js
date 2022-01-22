@@ -56,9 +56,6 @@ function randomCodeLines(numOfLines){
         var li = document.createElement("li");
         li.setAttribute('id','hackli');
 
-
-        
-            
         let element = linesOfCode[getRandomInt(3)];
         for(let i = 0; i < element.length; i++){
             var pixel_len = 0;
@@ -79,6 +76,31 @@ function randomCodeLines(numOfLines){
 
     }
     
+}
+
+function typeWrite(span_position){
+
+    var ul = document.getElementById("coding-text");
+    var li = document.createElement("li");
+    li.setAttribute('id','hackli');
+
+    let element = linesOfCode[getRandomInt(3)];
+    for(let i = 0; i < element.length; i++){
+        var pixel_len = 0;
+        if (screen.width >= 1100) {
+            pixel_len = 13;
+        } else {
+            pixel_len = 9;
+        }
+        var width_of_ul = ul.clientWidth;
+        var number_of_spans = width_of_ul / pixel_len;
+        if(i < number_of_spans){
+            li.innerHTML += "<span>" + element[i] +"</span>";
+        }
+    }
+
+
+    ul.appendChild(li);
 }
 
 //activate landing page
@@ -103,18 +125,23 @@ function activateLanding(){
 
 
 function hackerText() {
-
-    hackLines = gsap.utils.toArray("#coding-text li");
+    let codeLinesTL = gsap.timeline();
+    let hackLines = gsap.utils.toArray("#coding-text li");
     gsap.utils.shuffle(hackLines);
-    spanArr = gsap.utils.toArray("#hackli span");
+    let spanArr = gsap.utils.toArray("#hackli span");
+    gsap.utils.shuffle(spanArr);
 
-    //codeLinesTL.from(hackLines, {opacity: 0, duration: 5, ease: "none", stagger: {amount: 1}});
+    let line_scroll_time = 0;
+    let stagger_time = 0;
 
-    document.querySelectorAll("#hackli span").forEach(item => {
-        item.addEventListener("mouseover", event =>{
-            gsap.effects.hover_glitch(item);
-        })
-    })
+    if(screen.width >= 1100){
+        line_scroll_time = screen.width / 550;
+        
+    }else{
+        line_scroll_time = screen.width / 100;
+    }
+
+    codeLinesTL.from(spanArr, {duration: line_scroll_time, ease: "none", stagger: .01, text: {value: ""}}, "-=2.8");
 }
 
 
@@ -160,8 +187,15 @@ function onResize(){
         randomCodeLines(lines_height);
         hackerText();
     }
+    document.querySelectorAll("#hackli span").forEach(item => {
+        item.addEventListener("mouseover", event =>{
+            console.log("log");
+            gsap.effects.hover_glitch(item);
+        })
+    })
 }
 
 window.addEventListener("resize", function() {
     onResize();
 })
+
