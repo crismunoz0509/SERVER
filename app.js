@@ -60,9 +60,13 @@ function randomCodeLines(numOfLines){
         
             
         let element = linesOfCode[getRandomInt(3)];
-        console.log(element)
         for(let i = 0; i < element.length; i++){
-            var pixel_len = 13;
+            var pixel_len = 0;
+            if (screen.width >= 1100) {
+                pixel_len = 13;
+            } else {
+                pixel_len = 9;
+            }
             var width_of_ul = ul.clientWidth;
             var number_of_spans = width_of_ul / pixel_len;
             if(i < number_of_spans){
@@ -100,12 +104,21 @@ function activateLanding(){
 function hackerText() {
     let ul_height = document.getElementById("coding-text");
     let lines_height = ul_height.clientHeight / 45;
-    randomCodeLines(lines_height);
+
+    if (screen.width >= 1100) {
+        ul_height = document.getElementById("coding-text");
+        lines_height = ul_height.clientHeight / 45;
+        randomCodeLines(lines_height);
+    } else {
+        ul_height = document.getElementById("coding-text");
+        lines_height = ul_height.clientHeight / 30;
+        console.log(lines_height);
+        randomCodeLines(lines_height);
+    }
 
     hackLines = gsap.utils.toArray("#coding-text li");
     gsap.utils.shuffle(hackLines);
     spanArr = gsap.utils.toArray("#hackli span");
-    console.log(spanArr)
 
     //codeLinesTL.from(hackLines, {opacity: 0, duration: 5, ease: "none", stagger: {amount: 1}});
 
@@ -152,7 +165,8 @@ window.addEventListener("resize", function() {
         hackerText();
     } else {
         let ul_height = document.getElementById("coding-text");
-        let lines_height = ul_height.clientHeight / 45;
+        let lines_height = ul_height.clientHeight / 25;
+        console.log(lines_height);
         randomCodeLines(lines_height);
         hackerText();
     }
