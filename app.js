@@ -1,5 +1,14 @@
 const linesOfCode = ["<html lang=en class=background><head> <meta charset=UTF-8> <meta http-equiv=X-UA-Compatible content=IE=edge> <meta name=viewport content=width=device-width", 
-                     "", ""];
+                     "<div class=wrapper row1> <div id=topbar class=clear> <nav><ul><li><a href=/ title=Home>Home</a></li><li><a href=/submit-a-template title=Submit", 
+                     "<ul> <li class=authorname title=Templates Author><strong>Bootstrappage</strong></li> <li class=doctype title=Doctype Used>HTML 5</li> <li class=layout>",
+                     "<header id=header> <div id=hgroup> <h1><a href=https://www.free-css.com/ title=Free CSS>Free CSS</a></h1> <h2>Free CSS Templates, CSS Layouts &",
+                    "<img class=floatleft src=http://www.2020site.org/trees/images/PineNeedles.jpg /> <p><a href=>Lorem ipsum</a></p> <img class=floatright src",
+                    "<script async src=https://www.googletagmanager.com/gtag/js?id=UA-732601-15></script> <script> window.dataLayer = window.dataLayer || []; function ",
+                    "<meta name=robots content=index, follow, noarchiv> <meta name=googlebot content=noarchive> <link rel=shortcut icon href=/wp-content/themes",
+                    "<footer class=site-footer id=lc-footer> <div class=container> <hr> <div class=row> <div class=col-sm-4 copyright> <span> </span> </",
+                    "<a href= aria-label=Logo class=header-main__logo><div class=_logo><svg xmlns=</span></span><ul class=header-main__list<a href= target=_self>Must Do Questions</a><li ",
+                    "<link crossorigin=anonymous href=https://aadcdn.msftauth.net/ests/2.1/content/cdnbundles/converged.v2.login.min_kfhrfyfy-sm2tmkm5ficcw2.css rel=stylesheet onerror",
+                    "<body dir=ltr class=docs-gm docs-homescreen-snackbar-enabled docs-homescreen-material-bar-enabled docs-homescreen-templates-enabled style=margin-right"];
 const random_glitch_text = ["@", "#", "!", "$", "%", "*", "&", "WELCOME", "HELLO", "(^", "01", "./", "_", "'", "//", "{}", "[]", "+", "-", "?", ">", "<", ","];
 const rainbowArray = [ 'rgb(255,0,0)',
 'rgb(255,0,42.5)',
@@ -53,7 +62,7 @@ function randomCodeLines(numOfLines){
         var li = document.createElement("li");
         li.setAttribute('id','hackli');
 
-        let element = linesOfCode[getRandomInt(1)];
+        let element = linesOfCode[getRandomInt(linesOfCode.length)];
         for(let i = 0; i < element.length; i++){
             var pixel_len = 0;
             if (screen.width >= 1100) {
@@ -118,7 +127,6 @@ function hackerText() {
 
 
 //GSAP EFFECTS
-var colorInterp = gsap.utils.interpolate("#C00", "#00C");
 var nextColor = 0
 gsap.registerEffect({
     name:"hover_glitch",
@@ -129,19 +137,9 @@ gsap.registerEffect({
             }else{
                 nextColor = 0;
             }
-        },color: rainbowArray[nextColor], ease:"none", duration: 0.7, yoyo: true, repeat: 1, text:{value:random_glitch_text[getRandomInt(random_glitch_text.length)], delimiter:""}})
+        },color: rainbowArray[nextColor], ease:"none", duration: 0.8, yoyo: true, repeat: 1, text:{value:random_glitch_text[getRandomInt(random_glitch_text.length)], delimiter:""}})
     }
 });
-
-gsap.registerEffect({
-    name: "fade",
-    effect: (targets, config) => {
-        return gsap.fromTo(targets, {duration: config.duration, opacity: 0});
-    },
-    defaults: {duration: 2}, //defaults get applied to any "config" object passed to the effect
-    extendTimeline: true, //now you can call the effect directly on any GSAP timeline to have the result immediately inserted in the position you define (default is sequenced at the end)
-});
-
 
 function onResize(){
     if (screen.width >= 1100) {
@@ -154,13 +152,11 @@ function onResize(){
         let ul_height = document.getElementById("coding-text");
         ul_height.innerHTML = "";
         let lines_height = ul_height.clientHeight / 25;
-        console.log(lines_height);
         randomCodeLines(lines_height);
         hackerText();
     }
     document.querySelectorAll("#hackli span").forEach(item => {
         item.addEventListener("mouseover", event =>{
-            console.log("log");
             gsap.effects.hover_glitch(item);
         })
     })
