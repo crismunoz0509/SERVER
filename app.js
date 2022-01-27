@@ -9,7 +9,8 @@ const linesOfCode = ["<html lang=en class=background><head> <meta charset=UTF-8>
                     "<a href= aria-label=Logo class=header-main__logo><div class=_logo><svg xmlns=</span></span><ul class=header-main__list<a href= target=_self>Must Do Questions</a><li ",
                     "<link crossorigin=anonymous href=https://aadcdn.msftauth.net/ests/2.1/content/cdnbundles/converged.v2.login.min_kfhrfyfy-sm2tmkm5ficcw2.css rel=stylesheet onerror",
                     "<body dir=ltr class=docs-gm docs-homescreen-snackbar-enabled docs-homescreen-material-bar-enabled docs-homescreen-templates-enabled style=margin-right"];
-const random_glitch_text = ["@", "#", "!", "$", "%", "*", "&", "WELCOME", "HELLO", "(^", "01", "./", "_", "'", "//", "{}", "[]", "+", "-", "?", ">", "<", ","];
+
+                    const random_glitch_text = ["@", "#", "!", "$", "%", "*", "&", "WELCOME", "HELLO", "(^", "01", "./", "_", "'", "//", "{}", "[]", "+", "-", "?", ">", "<", ","];
 const rainbowArray = [ 'rgb(255,0,0)',
 'rgb(255,0,42.5)',
 'rgb(255,0,85)',
@@ -84,22 +85,22 @@ function randomCodeLines(numOfLines){
     
 }
 //activate landing page
-startTL.to(".text", {y:"0%", duration: 1.5, ease: 'sine.out'});
+startTL.to(".text", {y:"0%", duration: 1.5,});
 function activateLanding(){
-    var screendrop = 0;
+    var screendrop;
 
-    var width = screen.width;
-    if (width > 1000) {
-        screendrop = 2.5
+    if (screen.width > 1000) {
+        screendrop = 3
         speed = 0.01;
     }else{
-        screendrop = 2.5
+        screendrop = 3
         speed = 15;
     }
     startTL.to(".slider", {y: "100%", duration: screendrop});
     startTL.to(".intro", {y: "100%", duration: screendrop, onComplete: onResize()}, "-=2.5");
-    startTL.fromTo(".nav", {opacity: .1, y:"-100"}, {y:"0", opacity: 1, duration: 1.5});
+    startTL.fromTo(".nav", {opacity: 0, y:"-100"}, {y:"0", opacity: 1, duration: 1.5});
     startTL.to(".nav-menu li:first-child", {rotation:1080, duration: 1,})
+
 }
 
 
@@ -112,7 +113,6 @@ function hackerText() {
     gsap.utils.shuffle(spanArr);
 
     let line_scroll_time = 0;
-    let stagger_time = 0;
 
     if(screen.width >= 1100){
         line_scroll_time = screen.width / 550;
@@ -166,3 +166,25 @@ window.addEventListener("resize", function() {
     onResize();
 })
 
+// const nav_about = document.getElementsByClassName("nav-about");
+// const nav_logo = document.getElementsByClassName("nav-logo");
+// const nav_contact = document.getElementsByClassName("nav-contact");
+// const nav_home = document.getElementsByClassName("nav-home");
+const nav_elements = document.querySelectorAll(".nav-menu li a").forEach(element => {
+
+    let element_txt = `<>` + element.innerHTML + `<>`;
+    console.log(element_txt)
+
+    const hover = gsap.to(element, {
+        text: element_txt,
+        duration: 0.5,
+        paused: true,
+    });
+
+    element.addEventListener("mouseenter", event => {
+        hover.play();
+    });
+    element.addEventListener("mouseleave", event => {
+        hover.reverse();
+    });
+});
