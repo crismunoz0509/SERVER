@@ -145,7 +145,7 @@ function onResize(){
     if (screen.width >= 1100) {
         let ul_height = document.getElementById("coding-text");
         ul_height.innerHTML = "";
-        let lines_height = ul_height.clientHeight / 45;
+        let lines_height = ul_height.clientHeight / 40;
         randomCodeLines(lines_height);
         hackerText();
     } else {
@@ -166,10 +166,7 @@ window.addEventListener("resize", function() {
     onResize();
 })
 
-// const nav_about = document.getElementsByClassName("nav-about");
-// const nav_logo = document.getElementsByClassName("nav-logo");
-// const nav_contact = document.getElementsByClassName("nav-contact");
-// const nav_home = document.getElementsByClassName("nav-home");
+//Nav bar hover animations
 const nav_elements = document.querySelectorAll(".nav-menu li a").forEach(element => {
 
     let element_txt = `<>` + element.innerHTML + `<>`;

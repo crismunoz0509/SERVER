@@ -190,11 +190,23 @@ section {
 
 .led-showcase{
     background-size: cover;
-    color: black;
+    color: white;
     min-height: 100vh; 
     background-size: cover;
-    padding: 5% 10%;
     position: relative;
+}
+
+.led-background{
+    background-color: black;
+    min-height: 100vh;
+    padding: 5% 0%;
+    font-size: 1.5rem;
+}
+
+.led-text {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
 }
 
 .led-title{
