@@ -204,13 +204,87 @@ section {
 }
 
 .led-text {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    row-gap: 3rem;
+}
+
+.led-text p {
+    text-align: center;
 }
 
 .led-title{
     font-size: 3rem;
+}
+
+.carousel {
+    position: relative;
+    height: 398px;
+    width: 398px;
+    margin: 0 auto;
+}
+
+.carousel_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel_track-container {
+    background: white;
+    height: 100%;
+    position: relative;
+}
+
+.carousel_track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.carousel_slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.carousel_button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50px;
+    background: transparent;
+    border: 0;
+    color: white;
+    cursor: pointer;
+}
+
+.carousel_button--left {
+    left: -45px;
+}
+
+.carousel_button--right {
+    right: -45px;
+}
+
+.carousel_nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.carousel_indicator {
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: white;
+    margin: 0 10px;
+}
+
+.carousel_indicator.current-slide {
+    background: black;
 }
 
 /*---------------- THIRD PAGE ------------------------*/

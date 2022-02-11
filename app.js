@@ -1,14 +1,14 @@
-const linesOfCode = ["<html lang=en class=background><head> <meta charset=UTF-8> <meta http-equiv=X-UA-Compatible content=IE=edge> <meta name=viewport content=width=device-width", 
-                     "<div class=wrapper row1> <div id=topbar class=clear> <nav><ul><li><a href=/ title=Home>Home</a></li><li><a href=/submit-a-template title=Submit", 
-                     "<ul> <li class=authorname title=Templates Author><strong>Bootstrappage</strong></li> <li class=doctype title=Doctype Used>HTML 5</li> <li class=layout>",
-                     "<header id=header> <div id=hgroup> <h1><a href=https://www.free-css.com/ title=Free CSS>Free CSS</a></h1> <h2>Free CSS Templates, CSS Layouts &",
-                    "<img class=floatleft src=http://www.2020site.org/trees/images/PineNeedles.jpg /> <p><a href=>Lorem ipsum</a></p> <img class=floatright src",
-                    "<script async src=https://www.googletagmanager.com/gtag/js?id=UA-732601-15></script> <script> window.dataLayer = window.dataLayer || []; function ",
-                    "<meta name=robots content=index, follow, noarchiv> <meta name=googlebot content=noarchive> <link rel=shortcut icon href=/wp-content/themes",
-                    "<footer class=site-footer id=lc-footer> <div class=container> <hr> <div class=row> <div class=col-sm-4 copyright> <span> </span> </",
-                    "<a href= aria-label=Logo class=header-main__logo><div class=_logo><svg xmlns=</span></span><ul class=header-main__list<a href= target=_self>Must Do Questions</a><li ",
-                    "<link crossorigin=anonymous href=https://aadcdn.msftauth.net/ests/2.1/content/cdnbundles/converged.v2.login.min_kfhrfyfy-sm2tmkm5ficcw2.css rel=stylesheet onerror",
-                    "<body dir=ltr class=docs-gm docs-homescreen-snackbar-enabled docs-homescreen-material-bar-enabled docs-homescreen-templates-enabled style=margin-right"];
+const linesOfCode = ["<html lang=C.M. class=cristian-munoz><head> <meta charset=UTF-8> <meta http-equiv=X-UA-Compatible content=cristian-MUNOZ> <meta name=munoz content=cristian", 
+                     "<div class=munoz row1> <div id=CRISTIAN class=c.m.> <nav><ul><li><a href=cristian title=cristianmunoz>HELLO</a></li><li><a href=munozcristian title=munoz", 
+                     "<ul> <li class=CRISTIAN title=munozmunoz><strong>CRISTIANCRISTIAN</strong></li> <li class=munozCRISTIAN title=welcome welcome>SCROLL</li> <li class=layout>",
+                     "<header id=cristian> <div id=munoz> <h1><a href=munozmunoz title=CRISTIANMUNOZ>welcome!</a></h1> <h2>cristiancristian, munozmunoz",
+                    "<img class=WELCOME src=http://hello.conTINUE.CONtinue/CRISTIAN/munoz/welcome.jpg /> <p><a href=HELLO>scrollscrollscroll</a></p> <img class=CONTINUE src",
+                    "<script async src=cristian://www.welcomeweclome.!!!!/scroll/js?id=CRISTIAN></script> <script> continue! = scrolling! || []; CRISMUNOZ",
+                    "<meta name=welcome!! content=cristian, SCROLL, continue> <meta name=MUNOZ content=crismunoz> <link rel=munCRISTIAN icon href=cristianmunoz",
+                    "<footer class=cristianmunoz id=munozcristian> <div class=SCROLLSCROLL> <hr> <div class=cristianmunoz> <div class=continueSCROLL> <span> </span> </",
+                    "<a href=CRISTIAN class=scroll><div class=welCOME><svg xmlns=</span></span><ul class=weLCOME<a href= target=crisTAIN> munoz </a><li ",
+                    "<link crossorigin=cristian href=https://MUNoz.crisTIAN.net/welcome/CONTINUE/WELCOME/scrollorcs/sCRoLL.v2.login.CONINUE-cristiAN.css rel=MUNOZ onerror",
+                    "<body dir=MUNOZ class=CRISTIAN ScRoLL-munozcris-continue-CRISTIAN HELLO-munoz-scrollscroll-mun-cris SCROLL-munmunmun-ozozoz-cristian style=continue"];
 
                     const random_glitch_text = ["@", "#", "!", "$", "%", "*", "&", "WELCOME", "HELLO", "(^", "01", "./", "_", "'", "//", "{}", "[]", "+", "-", "?", ">", "<", ","];
 const rainbowArray = [ 'rgb(255,0,0)',
