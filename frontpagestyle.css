@@ -235,12 +235,14 @@ section {
     background: white;
     height: 100%;
     position: relative;
+    overflow: hidden;
 }
 
 .carousel_track {
     padding: 0;
     margin: 0;
     list-style: none;
+    transition: transform 250ms ease-in;
 }
 
 .carousel_slide {
@@ -282,10 +284,15 @@ section {
     height: 15px;
     background: white;
     margin: 0 10px;
+    cursor: pointer;
 }
 
-.carousel_indicator.current-slide {
+.carousel_indicator.current-dot {
     background: rgb(36, 36, 36);
+}
+
+.is-hidden {
+    display: none;
 }
 
 /*---------------- THIRD PAGE ------------------------*/
