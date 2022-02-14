@@ -207,6 +207,7 @@ section {
     display: grid;
     grid-template-columns: 50% 50%;
     row-gap: 3rem;
+    margin-top: 2rem;
 }
 
 .led-text p {
@@ -284,7 +285,7 @@ section {
 }
 
 .carousel_indicator.current-slide {
-    background: black;
+    background: rgb(36, 36, 36);
 }
 
 /*---------------- THIRD PAGE ------------------------*/
