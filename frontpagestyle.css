@@ -199,19 +199,23 @@ section {
 .led-background{
     background-color: black;
     min-height: 100vh;
-    padding: 5% 0%;
+    padding: 3rem 0 0 0;
     font-size: 1.5rem;
 }
 
-.led-text {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    row-gap: 3rem;
+.pitext-ul {
     margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    list-style-type: none;
 }
 
-.led-text p {
-    text-align: center;
+.pitext-ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2rem 0 2rem;
+    overflow: none;
 }
 
 .led-title{

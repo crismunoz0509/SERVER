@@ -84,26 +84,6 @@ function randomCodeLines(numOfLines){
     }
     
 }
-//activate landing page
-// startTL.to(".text", {y:"0%", duration: 1.5,});
-// function activateLanding(){
-//     var screendrop;
-
-//     if (screen.width > 1000) {
-//         screendrop = 3
-//         speed = 0.01;
-//     }else{
-//         screendrop = 3
-//         speed = 15;
-//     }
-//     startTL.to(".slider", {y: "100%", duration: screendrop});
-//     startTL.to(".intro", {y: "100%", duration: screendrop, onComplete: onResize()}, "-=2.5");
-//     startTL.fromTo(".nav", {opacity: 0, y:"-100"}, {y:"0", opacity: 1, duration: 1.5});
-//     startTL.to(".nav-menu li:first-child", {rotation:1080, duration: 1,})
-
-// }
-
-
 
 function hackerText() {
     let codeLinesTL = gsap.timeline();

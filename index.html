@@ -9,7 +9,7 @@
     <title>Cristian-Munoz</title>
 </head>
 
-<body>
+<body onload="onResize()">
 
     
 
@@ -55,7 +55,7 @@
                 <h1 class="led-title">&lt;h1&gt;LED Matrix Project&lt;/h1&gt;</h1>
 
                 <a href="./fileupload.html">
-                    This is for the LED Image Project
+                    Click me to upload an image!
                 </a>
                 
                 <div class="carousel"> 
@@ -87,21 +87,24 @@
                 </div>
 
                 <div class="led-text">
-                    <p>
-                        A fun winter project which I've completed a prototype for, and am working on expanding using more panels to use for workshops with the Mobi organization at UTA.
-                    </p>
-                    <p>
-                        This Raspberry Pi project uses an LED Matrix to display images uploaded from my website. I allow anyone to upload
-                        any image file (.png, .jpg, .jpeg, .gif) they would like and I manually accept appropriate images to be downloaded.
-                    </p>
-                    <p>
-                        The Pi uses Secure Copy to download images from my server, after checking to see if they haven't already been downloaded. Then uses the hzeller
-                        rpi-rgb-led matrix repository to display and format images onto the matrix.
-                    </p>
-                    <p>
-                        The working prototype is a 32x64 resolution spread across 6x12 inches. Mobi and I are looking to expanding it to a 128x128 resolution to display weather data, school news, and logos
-                        from our office window and for other educational/CS related uses.
-                    </p>
+                    <ul class = "pitext-ul">
+
+                        <li>
+                            A fun winter project which I've completed a prototype for, and am working on expanding using more panels to use for workshops with the Mobi organization at UTA.
+                        </li>
+                        <li>
+                            This Raspberry Pi project uses an LED Matrix to display images uploaded from my website. I allow anyone to upload
+                            any image file (.png, .jpg, .jpeg, .gif) they would like and I manually accept appropriate images to be downloaded.
+                        </li>
+                        <li>
+                            The Pi uses Secure Copy to download images from my server. After checking to see if they haven't already been downloaded, I use the hzeller
+                            rpi-rgb-led matrix repository to display and format images onto the matrix.
+                        </li>
+                        <li>
+                            The working prototype is a 32x64 resolution spread across 6x12 inches. Mobi and I are looking to expanding it to a 128x128 resolution to display weather data, school news, and logos
+                            from our office window and for other educational/CS related uses.
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
